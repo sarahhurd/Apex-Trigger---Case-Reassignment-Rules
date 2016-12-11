@@ -1,0 +1,19 @@
+@isTest 
+      public class TestAssignCasesUsingAssignmentRules{
+      static testMethod void createnewCase() {
+      User userToCreate = [Select id from user where profile.name='System Administrator' Limit 1];
+     
+      
+      Test.startTest();    
+      Case CaseToCreate =new Case();
+      List<id> Ids= New List<Id>();
+      caseToCreate.ownerid= userToCreate.id;
+      caseToCreate.Status='new';
+      caseToCreate.Origin='Email';
+     
+      insert caseToCreate; 
+      
+           
+      Test.stopTest();
+   }
+}
